@@ -11,7 +11,7 @@ export default function Hero() {
         backgroundImage: `url(${HeroMSAP.src})`,
       }}
     >
-      {/* Gradient Overlay */}
+      {/* Gradient Overlays */}
       <div
         className="absolute inset-0"
         style={{
