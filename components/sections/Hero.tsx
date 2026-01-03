@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { HeroMSAP } from "@/assets";
 
@@ -6,11 +7,17 @@ export default function Hero() {
   return (
     <section
       id="beranda"
-      className="scroll-mt-32 relative w-full h-[560px] bg-cover bg-center flex items-center"
-      style={{
-        backgroundImage: `url(${HeroMSAP.src})`,
-      }}
+      className="scroll-mt-32 relative w-full h-[560px] flex items-center overflow-hidden"
     >
+      <Image
+        src={HeroMSAP}
+        alt="Hero Background"
+        fill
+        priority
+        className="object-cover object-center"
+        quality={90}
+      />
+
       {/* Gradient Overlays */}
       <div
         className="absolute inset-0"
@@ -53,6 +60,6 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </section >
   );
 }

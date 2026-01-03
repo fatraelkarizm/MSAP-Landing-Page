@@ -1,5 +1,6 @@
 "use client"
 import { AvailMSAP } from "@/assets";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function CTABanner() {
@@ -10,11 +11,15 @@ export default function CTABanner() {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="min-h-[280px] h-auto rounded-xl px-6 md:px-[58px] py-[40px] md:py-[58px] flex items-center bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${AvailMSAP.src})`}}
+        className="relative min-h-[280px] h-auto rounded-xl px-6 md:px-[58px] py-[40px] md:py-[58px] flex items-center overflow-hidden"
       >
-        <div className="flex flex-col gap-4 md:gap-2 max-w-[740px]">
+        <Image
+          src={AvailMSAP}
+          alt="CTA Background"
+          fill
+          className="object-cover object-center"
+        />
+        <div className="relative z-10 flex flex-col gap-4 md:gap-2 max-w-[740px]">
           <h2 className="text-white text-3xl md:text-[40px] font-medium leading-tight md:leading-[48px]">
             Kami Menyediakan apa yang Organisasi, Instansi, atau Bisnis Anda
             Butuhkan
